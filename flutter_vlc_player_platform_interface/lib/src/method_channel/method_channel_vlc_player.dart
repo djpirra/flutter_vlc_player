@@ -493,4 +493,9 @@ class MethodChannelVlcPlayer extends VlcPlayerPlatform {
   Future<bool> stopRecording(int viewId) {
     return _api.stopRecording(viewId);
   }
+
+  @override
+  Future<void> setSubtitleFontSize(int viewId, int fontSize) {
+    return _api.setSubtitleFontSize(viewId,fontSize);
+  }
 }

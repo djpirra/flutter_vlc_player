@@ -409,4 +409,10 @@ public class FlutterVlcPlayerBuilder implements Messages.VlcPlayerApi {
         var player = getPlayer(playerId);
         return player.stopRecording();
     }
+
+    @Override
+    public void setSubtitleFontSize(@NonNull Long playerId, @NonNull Integer fontSize) {
+        var player = getPlayer(playerId);
+        player.setSubtitleFontSize(fontSize);
+    }
 }

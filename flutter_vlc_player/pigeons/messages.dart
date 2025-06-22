@@ -85,6 +85,16 @@ class AddAudioMessage {
   });
 }
 
+class SetSubtitleFontSizeMessage {
+  final int playerId;
+  final int fontSize;
+
+  const SetSubtitleFontSizeMessage({
+    required this.playerId,
+    required this.fontSize,
+  });
+}
+
 @HostApi(dartHostTestHandler: 'TestHostVlcPlayerApi')
 abstract class VlcPlayerApi {
   void initialize();
@@ -139,6 +149,8 @@ abstract class VlcPlayerApi {
   int getSpuDelay(int playerId);
 
   void addSubtitleTrack(AddSubtitleMessage msg);
+
+  void setSubtitleFontSize(int playerId, int fontSize);
 
   // audios methods
   int getAudioTracksCount(int playerId);

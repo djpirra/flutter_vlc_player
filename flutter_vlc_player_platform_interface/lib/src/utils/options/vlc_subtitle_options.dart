@@ -96,4 +96,9 @@ class VlcSubtitleOptions {
   static String yuvpRenderer(bool enable) {
     return enable ? '--freetype-yuvp' : '--no-freetype-yuvp';
   }
+
+  /// Set subtitle font size
+  static String subtitleFontSize(int fontSize) {
+    return '--freetype-rel-fontsize=$fontSize';
+  }
 }

@@ -650,6 +650,12 @@ final class FlutterVlcPlayer implements PlatformView {
         return mediaPlayer.record(null);
     }
 
+    void setSubtitleFontSize(int fontSize) {
+        if (mediaPlayer == null) return;
+
+        mediaPlayer.setSubtitleFontSize(fontSize);
+    }
+
     private void log(String message) {
         if (debug) {
             Log.d(TAG, message);

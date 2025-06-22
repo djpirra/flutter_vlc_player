@@ -970,6 +970,28 @@ class VlcPlayerController extends ValueNotifier<VlcPlayerValue> {
     }
     _isReadyToInitialize = true;
   }
+
+  /// Set subtitle font size in pixels.
+  /// [fontSize] - The absolute font size in pixels.
+  Future<void> setSubtitleFontSize(int fontSize) async {
+    _throwIfNotInitialized('setSubtitleFontSize');
+    if (fontSize <= 0) {
+      throw ArgumentError.value(
+        fontSize,
+        'Font size must be greater than 0',
+      );
+    }
+    final subtitleOptions = VlcSubtitleOptions([VlcSubtitleOptions.fontSize(fontSize)]);
+    await vlcPlayerPlatform.create(
+      viewId: _viewId,
+      uri: dataSource,
+      type: _dataSourceType,
+      package: package,
+      autoPlay: value.isPlaying,
+      hwAcc: hwAcc,
+      options: VlcPlayerOptions(subtitle: subtitleOptions),
+    );
+  }
 }
 
 ///

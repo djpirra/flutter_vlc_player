@@ -47,6 +47,11 @@ class VlcMediaEvent {
   /// Only used if [eventType] is [VlcMediaEventType.buffering, VlcMediaEventType.playing].
   final int? activeSpuTrack;
 
+  /// Returns the font size for subtitles.
+  ///
+  /// Only used if [eventType] is [VlcMediaEventType.buffering, VlcMediaEventType.playing].
+  final int? subtitleFontSize;
+
   /// Returns the buffer percent of media.
   ///
   /// Only used if [eventType] is [VlcMediaEventType.buffering].
@@ -83,6 +88,7 @@ class VlcMediaEvent {
     this.activeAudioTrack,
     this.spuTracksCount,
     this.activeSpuTrack,
+    this.subtitleFontSize,
     this.bufferPercent,
     this.isPlaying,
     this.isRecording,

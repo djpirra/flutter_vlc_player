@@ -207,6 +207,12 @@ abstract class VlcPlayerPlatform extends PlatformInterface {
     throw _unimplemented('addSubtitleTrack');
   }
 
+  /// Set subtitle font size
+  /// [fontSize] - The font size to set
+  Future<void> setSubtitleFontSize(int viewId, int fontSize) {
+    throw _unimplemented('setSubtitleFontSize');
+  }
+
   /// Returns the number of audio tracks
   Future<int?> getAudioTracksCount(int viewId) {
     throw _unimplemented('getAudioTracksCount');
